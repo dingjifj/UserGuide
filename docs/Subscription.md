@@ -4,7 +4,9 @@ sidebar_position: 3
 ---
 
 import ImageLayout from '@site/src/components/ImageLayout';
-import Package2 from '@site/static/img/package2.PNG';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
 # 订阅与支付
 
 ## 1. 章节说明
@@ -19,9 +21,8 @@ import Package2 from '@site/static/img/package2.PNG';
 * **季度套餐**：按季度订阅，享受一定折扣。
 * **年度套餐**：按年订阅，享受更大折扣，适合长期使用。
 
-<ImageLayout column={1} imgHeight="300px">
-  {/* 2. 直接使用变量名，不再写 require，红线肯定消失 */}
-  <img src={Package2} alt="选择适合你的套餐" />
+<ImageLayout column={1} imgHeight="600px">
+  <img src={useBaseUrl('/img/package2.png')} alt="" />
 </ImageLayout>
 
 ### 2.2 价格与权益说明
@@ -43,9 +44,9 @@ import Package2 from '@site/static/img/package2.PNG';
 4. 支付成功后，返回应用自动生效（若未生效见“恢复购买”）。
 
 <ImageLayout column={3} imgHeight="200px">
-  <img src={useBaseUrl('/img/package1.PNG')} alt="点击“账号”" />
-  <img src={useBaseUrl('/img/package2.PNG')} alt="选择套餐" />
-    <img src={useBaseUrl('/img/package3.PNG')} alt="完成支付" />
+  <img src={useBaseUrl('/img/package1.png')} alt="点击“账号”" />
+  <img src={useBaseUrl('/img/package2.png')} alt="选择套餐" />
+    <img src={useBaseUrl('/img/package3.png')} alt="完成支付" />
 </ImageLayout>
 
 ### 3.2 官网购买
@@ -57,7 +58,7 @@ import Package2 from '@site/static/img/package2.PNG';
 3. 支付成功后，使用购买时的账号登录应用，套餐权益将自动生效（若未生效见“恢复购买”）
 
 <ImageLayout column={1} imgHeight="600px">
-  <img src={useBaseUrl('/img/packageoffice.PNG')} alt="" />
+  <img src={useBaseUrl('/img/packageoffice.png')} alt="" />
 </ImageLayout>
 
 ### 3.3 购买生效与权益校验
@@ -88,9 +89,9 @@ import Package2 from '@site/static/img/package2.PNG';
 打开 iPhone【设置】→ 点击 Apple ID →【订阅】→ 选择【归途回国】→【取消订阅】
 
 <ImageLayout column={3} imgHeight="300px">
-  <img src={useBaseUrl('/img/cancel1.PNG')} alt="" />
-  <img src={useBaseUrl('/img/cancel2.PNG')} alt="" />
-    <img src={useBaseUrl('/img/cancel3.PNG')} alt="" />
+  <img src={useBaseUrl('/img/cancel1.png')} alt="" />
+  <img src={useBaseUrl('/img/cancel2.png')} alt="" />
+    <img src={useBaseUrl('/img/cancel3.png')} alt="" />
 </ImageLayout>
 
 这里我自己没有订阅这个应用，所以没有截图，等后续补充。总之就是在订阅列表里找到这个应用，然后取消订阅就行了。
@@ -157,4 +158,4 @@ import Package2 from '@site/static/img/package2.PNG';
 2. 通过【订单记录】核对订单数量与金额。
 3. 立即联系客服提交“重复扣款”处理（通常优先处理），提供订单信息以便核实后续处理。
 
-git add .
+
