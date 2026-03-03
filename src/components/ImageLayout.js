@@ -1,22 +1,20 @@
 import React from 'react';
+// 必须导入这个 Hook 来处理路径
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-// 新增参数 imgHeight，默认 200px
 export default function ImageLayout({ children, column = 1, width = "100%", imgHeight = "200px" }) {
   const childrenArray = Array.isArray(children) ? children : [children];
   
   return (
-    /* 1. 外层大背景板 */
     <div style={{
       width: width,
-      backgroundColor: '#f0f5ff', // 飞书浅蓝
+      backgroundColor: '#f0f5ff',
       borderRadius: '12px',
       padding: '30px 20px',
       margin: '20px auto',
       border: '1px solid #e6efff',
       boxShadow: 'inset 0 1px 4px rgba(0,0,0,0.02)',
     }}>
-      
-      {/* 2. 内层 Grid 容器 */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: `repeat(${column}, 1fr)`,
@@ -26,20 +24,27 @@ export default function ImageLayout({ children, column = 1, width = "100%", imgH
       }}>
         {childrenArray.map((child, index) => {
           const caption = child.props?.alt || "";
+          
+          // --- 新增：自动补全 baseUrl 的逻辑 ---
+          const rawSrc = child.props?.src || "";
+          // 如果路径是以 / 开头的字符串，就用 useBaseUrl 包装它
+          const finalSrc = (typeof rawSrc === 'string' && rawSrc.startsWith('/')) 
+            ? useBaseUrl(rawSrc) 
+            : rawSrc;
 
           return (
             <div key={index} style={{ textAlign: 'center', width: '100%' }}>
               <div style={{ display: 'inline-block' }}>
                 {React.cloneElement(child, {
+                  // 强制覆盖 src 为处理后的路径
+                  src: finalSrc,
                   style: { 
-                    // === 核心：控制大小一致的关键 ===
-                    height: imgHeight,        // 统一所有图片的高度
-                    width: 'auto',            // 宽度自动，防止拉伸变形
-                    maxWidth: '100%',         // 防止超出格子
-                    objectFit: 'contain',     // 确保图片完整显示在设定范围内
-                    // ===========================
+                    height: imgHeight,
+                    width: 'auto',
+                    maxWidth: '100%',
+                    objectFit: 'contain',
                     borderRadius: '6px',
-                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)', // 提升立体感
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
                     display: 'block',
                     ...child.props.style 
                   }

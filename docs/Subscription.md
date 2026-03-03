@@ -21,7 +21,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * **年度套餐**：按年订阅，享受更大折扣，适合长期使用。
 
 <ImageLayout column={1} imgHeight="300px">
-  <img src={useBaseUrl('/img/package2.PNG')} alt="选择适合你的套餐" />
+  <img src="/img/package2.PNG" alt="选择适合你的套餐" />
 </ImageLayout>
 
 ### 2.2 价格与权益说明
