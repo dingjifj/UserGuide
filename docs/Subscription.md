@@ -4,12 +4,7 @@ sidebar_position: 3
 ---
 
 import ImageLayout from '@site/src/components/ImageLayout';
-// 1. 在这里导入图片，VS Code 通常能通过这个路径识别
 import Package2 from '@site/static/img/package2.PNG';
-
-import ImageLayout from '@site/src/components/ImageLayout';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # 订阅与支付
 
 ## 1. 章节说明
