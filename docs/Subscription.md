@@ -4,6 +4,10 @@ sidebar_position: 3
 ---
 
 import ImageLayout from '@site/src/components/ImageLayout';
+// 1. 在这里导入图片，VS Code 通常能通过这个路径识别
+import Package2 from '@site/static/img/package2.PNG';
+
+import ImageLayout from '@site/src/components/ImageLayout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # 订阅与支付
@@ -21,7 +25,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * **年度套餐**：按年订阅，享受更大折扣，适合长期使用。
 
 <ImageLayout column={1} imgHeight="300px">
-  <img src="/img/package2.PNG" alt="选择适合你的套餐" />
+  {/* 2. 直接使用变量名，不再写 require，红线肯定消失 */}
+  <img src={Package2} alt="选择适合你的套餐" />
 </ImageLayout>
 
 ### 2.2 价格与权益说明
@@ -157,4 +162,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 2. 通过【订单记录】核对订单数量与金额。
 3. 立即联系客服提交“重复扣款”处理（通常优先处理），提供订单信息以便核实后续处理。
 
-![测试图片是否能显示](/img/package2.PNG)
+git add .
