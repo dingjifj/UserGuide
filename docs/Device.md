@@ -53,8 +53,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 路径示例：【更多 → 设置→ 设备管理】
 
 <ImageLayout column={2} imgHeight="300px">
-  <img src={useBaseUrl('/img/device1.PNG')} alt="步骤一" />
-  <img src={useBaseUrl('/img/device2.PNG')} alt="步骤二" />
+  <img src={useBaseUrl('/img/device1.png')} alt="步骤一" />
+  <img src={useBaseUrl('/img/device2.png')} alt="步骤二" />
 </ImageLayout>
 
 ### 4.2 远程下线设备
