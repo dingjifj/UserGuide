@@ -157,4 +157,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 2. 通过【订单记录】核对订单数量与金额。
 3. 立即联系客服提交“重复扣款”处理（通常优先处理），提供订单信息以便核实后续处理。
 
-
+![测试图片是否能显示](/img/package2.PNG)
