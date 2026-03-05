@@ -21,7 +21,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * **季度套餐**：按季度订阅，享受一定折扣。
 * **年度套餐**：按年订阅，享受更大折扣，适合长期使用。
 
-<ImageLayout column={1} imgHeight="600px">
+<ImageLayout column={1} imgHeight="400px">
   <img src={useBaseUrl('/img/package2.png')} alt="" />
 </ImageLayout>
 
@@ -158,4 +158,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 2. 通过【订单记录】核对订单数量与金额。
 3. 立即联系客服提交“重复扣款”处理（通常优先处理），提供订单信息以便核实后续处理。
 
-
+更多问题请前往[《常见问题（FAQ）》](./FAQ.md)章节查看解决方案与建议或者联系客服。

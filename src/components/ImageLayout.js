@@ -1,14 +1,13 @@
 import React from 'react';
 
-// 新增参数 imgHeight，默认 200px
-export default function ImageLayout({ children, column = 1, width = "100%", imgHeight = "200px" }) {
+export default function ImageLayout({ children, column = 1, width = "100%", imgHeight = "400px" }) {
   const childrenArray = Array.isArray(children) ? children : [children];
   
   return (
-    /* 1. 外层大背景板 */
+    /* 外层大背景板 */
     <div style={{
       width: width,
-      backgroundColor: '#f0f5ff', // 飞书浅蓝
+      backgroundColor: '#f0f5ff',
       borderRadius: '12px',
       padding: '30px 20px',
       margin: '20px auto',
@@ -16,7 +15,6 @@ export default function ImageLayout({ children, column = 1, width = "100%", imgH
       boxShadow: 'inset 0 1px 4px rgba(0,0,0,0.02)',
     }}>
       
-      {/* 2. 内层 Grid 容器 */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: `repeat(${column}, 1fr)`,
@@ -25,34 +23,31 @@ export default function ImageLayout({ children, column = 1, width = "100%", imgH
         justifyItems: 'center',
       }}>
         {childrenArray.map((child, index) => {
-          const caption = child.props?.alt || "";
+          const caption = child.props?.alt || child.props?.title || "";
 
           return (
             <div key={index} style={{ textAlign: 'center', width: '100%' }}>
-              <div style={{ display: 'inline-block' }}>
+              <div style={{ display: 'inline-block', width: '100%', maxWidth: 'fit-content' }}>
                 {React.cloneElement(child, {
+                  // 针对视频和图片通用的样式注入
                   style: { 
-                    // === 核心：控制大小一致的关键 ===
-                    height: imgHeight,        // 统一所有图片的高度
-                    width: 'auto',            // 宽度自动，防止拉伸变形
-                    maxWidth: '100%',         // 防止超出格子
-                    objectFit: 'contain',     // 确保图片完整显示在设定范围内
-                    // ===========================
-                    borderRadius: '6px',
-                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)', // 提升立体感
+                    height: imgHeight,
+                    width: 'auto',
+                    maxWidth: '100%',
+                    objectFit: 'contain',
+                    borderRadius: '8px',
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
                     display: 'block',
+                    backgroundColor: '#000', // 视频未加载时的背景色
                     ...child.props.style 
-                  }
+                  },
+                  // 如果是视频，默认加上控制条
+                  controls: child.type === 'video' ? true : child.props.controls,
                 })}
               </div>
               
               {caption && (
-                <div style={{
-                  marginTop: '12px',
-                  fontSize: '13px',
-                  color: '#667085',
-                  fontWeight: '500'
-                }}>
+                <div style={{ marginTop: '12px', fontSize: '13px', color: '#667085', fontWeight: '500' }}>
                   {caption}
                 </div>
               )}

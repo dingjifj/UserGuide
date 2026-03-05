@@ -18,7 +18,10 @@ const config = {
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
-
+ markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   // Set the production url of your site here
   url: 'https://dingjifj.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -83,7 +86,7 @@ trailingSlash: false,
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: '首页',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -95,7 +98,7 @@ trailingSlash: false,
             position: 'left',
             label: 'UserGuide',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+         // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -135,13 +138,10 @@ trailingSlash: false,
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
+             
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/dingjifj',
               },
             ],
           },

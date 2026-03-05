@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: '结构清晰，上手快',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        手册按“产品介绍 → 快速开始 → 订阅与支付 → 设备管理 → 常见问题”的路径组织，
+        读者能按使用流程一路走下去。每章都先给结论/入口，再给步骤，减少来回翻找。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: '面向场景，解决问题导向',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        内容围绕真实使用场景和高频问题来写，强调“遇到什么现象、可能原因、怎么做”。
+        尤其在 FAQ 与快速开始里，把排查顺序固定下来，让用户能自助解决大多数问题。
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: '规则透明，边界明确',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        对订阅、续费、退款、多设备上限等关键规则给出清晰说明，
+        并明确不同购买渠道的处理方式。对网络体验影响因素与合规使用也做了提示，帮助用户建立合理预期、降低误解与投诉。
       </>
     ),
   },
