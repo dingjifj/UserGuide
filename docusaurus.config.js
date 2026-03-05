@@ -18,10 +18,26 @@ const config = {
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
+   themes: [
+    // 1. 你原本的 Mermaid 插件
+    '@docusaurus/theme-mermaid',
+    
+    // 2. 新加的本地搜索插件（注意这个插件本身也是一个数组，带了配置参数）
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en", "zh"], // 支持中英文搜索
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
+
  markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+
   // Set the production url of your site here
   url: 'https://dingjifj.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
